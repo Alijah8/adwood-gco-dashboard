@@ -373,6 +373,7 @@ onMounted(fetchData)
             <td class="col-actions" @click.stop>
               <div class="action-btns">
                 <a v-if="row.url" :href="row.url" target="_blank" class="btn btn-xs btn-action" title="Open Job Posting">Apply &#8599;</a>
+                <a href="/resume.docx" download class="btn btn-xs btn-action-alt" title="Download Resume">Resume &#128196;</a>
                 <a v-if="row.package?.drive_folder_url" :href="row.package.drive_folder_url" target="_blank" class="btn btn-xs btn-action-alt" title="Open Documents">Docs &#128193;</a>
               </div>
             </td>
@@ -485,6 +486,9 @@ onMounted(fetchData)
             <div class="modal-links">
               <a v-if="selectedJob.url" :href="selectedJob.url" target="_blank" class="btn btn-primary">
                 Open Job Posting &#8599;
+              </a>
+              <a href="/resume.docx" download class="btn btn-secondary">
+                Download Resume &#128196;
               </a>
               <a v-if="selectedJob.package?.drive_folder_url" :href="selectedJob.package.drive_folder_url" target="_blank" class="btn btn-secondary">
                 Open Documents &#128193;
